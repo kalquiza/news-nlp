@@ -39,12 +39,24 @@ app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 })
 
-var json = {
-    'title': 'test json response',
-    'message': 'this is a message',
-    'time': 'now'
-}
 
+// GET url article sentiment analysis from aylien api
+app.get('/api', (req, res) => {
+    // Get input from query parameter
+    let url = req.query.input;
+
+    // Get sentiment api
+    textapi.sentiment({
+        url: url,
+        mode: 'article'
+      }, function(error, response) {
+        if (error === null) {
+            res.send(response);
+        }
+      });
+  });
+
+// GET test tesponse from mock api
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
