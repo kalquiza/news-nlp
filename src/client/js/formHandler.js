@@ -1,8 +1,10 @@
 function handleSubmit(event) {
     event.preventDefault()
 
+    console.log(event)
+
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
+    let formText = document.getElementById('input').value
     // Client.checkForName(formText)
 
     if (/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/.test(formText)) {
