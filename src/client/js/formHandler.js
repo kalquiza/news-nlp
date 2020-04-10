@@ -15,6 +15,7 @@ function handleSubmit(event) {
             document.getElementById('url').innerHTML = `Input: ${formText}`
             document.getElementById('polarity').innerHTML = `Polarity: ${res.polarity}`
             document.getElementById('polarity_confidence').innerHTML = `Polarity confidence: ${res.polarity_confidence}`
+            document.getElementById('input_text').innerHTML = `Text Analyzed: ${res.text}`
         })
     } else
     alert('Invalid URL!')
